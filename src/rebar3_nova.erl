@@ -10,7 +10,7 @@ init(State) ->
                                    Minor > "15" ->
             lists:foldl(fun provider_init/2, {ok, State}, [rebar3_nova_prv, rebar3_nova_serve, rebar3_nova_routes]);
         _ ->
-            rebar_api:abort("Nova needs Rebar > 3.15 to function. Your version is: ~p. Please consider upgrading.", [Vsn])
+            rebar_api:abort("Nova needs Rebar > 3.15 to function. Your version is: ~p. Please consider upgrading (branch).", [Vsn])
     end.
 
 provider_init(Module, {ok, State}) ->
